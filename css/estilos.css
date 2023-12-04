@@ -1,0 +1,125 @@
+.top-bar-upch.top-bar-upch {
+    background: #662481;
+    color: white;
+}
+
+.nav-link-home {
+    
+    color: #000;
+}
+
+.h1 {
+    color: #662481;
+}
+
+.html, .body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* BOTON */
+/* Cambiar el color del borde y el texto del botón a morado */
+.btn.btn-outline {
+    color: #662481; /* Cambia este valor por el código de color morado que desees */
+    border-color: #662481; /* Cambia este valor por el código de color morado que desees */
+}
+
+/* Cambiar el color de fondo del botón al pasar el mouse por encima */
+.btn.btn-outline:hover {
+    background-color: #662481; /* Cambia este valor por el color de fondo que desees cuando se pase el mouse por encima */
+    color: #ffffff; /* Cambia este valor por el color de texto que desees cuando se pase el mouse por encima */
+}
+
+/* Cambiar el tamaño del botón */
+.btn.btn-outline {
+    font-size: 18px; /* Cambia este valor para ajustar el tamaño de la fuente */
+    padding: 10px 20px; /* Cambia este valor para ajustar el espaciado interno del botón */
+}
+
+/* Cambiar el radio de las esquinas del botón (borde redondeado) */
+.btn.btn-outline {
+    border-radius: 10px; /* Cambia este valor para ajustar el radio de las esquinas */
+}
+
+/* Cambiar el ancho del borde del botón */
+.btn.btn-outline {
+    border-width: 2px; /* Cambia este valor para ajustar el ancho del borde */
+}
+
+/* Cambiar el tipo de fuente del texto del botón */
+.btn.btn-outline {
+    font-family: Arial, sans-serif; /* Cambia este valor para ajustar la fuente del texto */
+}
+
+.botones-container {
+    text-align: center; /* Esto centrará los elementos horizontalmente */
+    margin-top: 20px; /* Puedes ajustar el margen superior según tus necesidades */
+  }
+  
+  /* Estilo adicional si lo necesitas */
+  .btn {
+    margin: 5px; /* Espacio entre los botones */
+  }
+
+  
+#descripcionContainer {
+    border: 2px solid #662481; /* Cambia #FF0000 al color que desees */
+    padding: 20px;
+    margin: 20px;
+    font-family: Arial, sans-serif; /* Cambia la fuente al tipo de letra que desees */
+    font-size: 18px; /* Ajusta el tamaño de la letra según tus preferencias */
+  }
+
+  #alumnosContainer {
+    text-align: center;
+    margin: 20px; /* Añade margen para espaciar el carrusel del contenido circundante */
+  }
+  
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    max-width: 100%; /* Ajusta el ancho máximo del carrusel */
+    margin: 0; /* Establece el margen a cero */
+    padding: 0; /* Establece el relleno a cero */
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    transition: transform 1s;
+    overflow: hidden; /* Añade overflow: hidden para ocultar las partes fuera de la vista */
+    max-height: auto; /* Ajusta la altura máxima de las diapositivas según tus preferencias */
+    margin: 0; /* Establece el margen a cero */
+    padding: 0; /* Establece el relleno a cero */
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto; /* Asegura que las imágenes se ajusten al ancho del contenedor */
+  }
+  
+ 
+  /* Estilo para los botones cuando se les pasa el mouse */
+  button:hover {
+    background-color: #00FF0000 ; /* Cambia el color de fondo al pasar el mouse por encima */
+  }
+  
+  /* Estilo para el carrusel cuando el mouse está dentro de él */
+  .carousel:hover .slide {
+    cursor: pointer;
+  }
+  
+  /* Estilo para el carrusel cuando el mouse está dentro de él */
+  .carousel:hover .slide:hover {
+    transform: scale(1.05); /* Aplica un efecto de escala en la diapositiva al pasar el mouse por encima */
+    transition: transform 0.3s;
+  }
+  
+
+  .info-box {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 2px solid #662481; /* Borde de color #662481 */
+    padding: 10px;
+    display: none; /* Inicialmente oculto */
+  }
+

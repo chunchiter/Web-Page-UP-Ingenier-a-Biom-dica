@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeneria Biomedica</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="https://www.upchiapas.edu.mx/images/logo_upw1.png" width="200px">
+        </a>
+        <h1>INGENIERIA BIOMEDICA</h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav"> </div>
+    </nav>
+
+    <div class="col-md-large d-flex justify-content-center align-items-center top-bar-upch" style="height: 10px">
+    </div>
+    <!-- PANELS -->
+    <div style="height: 100%;">
+      <img class="img-fluid" src="https://www.upchiapas.edu.mx/media/39/images/top.jpg" style="max-width: 100%; height: auto;">
+    </div>
+
+    <!-- buttons -->
+    <div class="botones-container">
+      <button type="button" class="btn btn-outline" onclick="mostrarDescripcion()">DESCRIPCION</button>
+      <button type="button" class="btn btn-outline" onclick="cargarMaterias()">PLAN DE ESTUDIOS</button>
+      <button type="button" class="btn btn-outline" onclick="mostrarDocentes()">DOCENTES</button>
+      <button type="button" class="btn btn-outline" onclick="visitas()">AGENDAR VISITA</button>
+      <a href="https://www.upchiapas.edu.mx/Registro" class="btn btn-outline">SOLICITAR FICHA</a>
+      <button type="button" class="btn btn-outline" onclick="student()">ALUMNOS</button>
+      <a href="https://www.google.com/maps/uv?pb=!1s0x85ed29faf70c283b%3A0xff57a2e3d9c9bd10!3m1!7e115!4s%2Fmaps%2Fplace%2Fup%2Bde%2Bchiapas%2F%4016.6149128%2C-93.0905968%2C3a%2C75y%2C7.08h%2C90t%2Fdata%3D*213m4*211e1*213m2*211sgGplXAVlkA2sq4wpX0Y95w*212e0*214m2*213m1*211s0x85ed29faf70c283b%3A0xff57a2e3d9c9bd10%3Fsa%3DX%26ved%3D2ahUKEwjKpYrTubSBAxXuMUQIHcl0A1gQpx96BAhaEAA%26hl%3Des-419!5sup%20de%20chiapas%20-%20Buscar%20con%20Google!15sCgIgAQ&imagekey=!1e10!2sAF1QipPbz39gU1DZWCjSOIurrGWWnEeok3muX4Njsvid&hl=es-419&sa=X&ved=2ahUKEwjKpYrTubSBAxXuMUQIHcl0A1gQpx96BAh5EA0" class="btn btn-outline">INFRAESTRUCTURA</a>
+    </div>
+
+    <!-- info -->   
+    <div id="descripcionContainer" style="display: none;"></div>
+    <script>
+      function descripcionBM() {
+          const descripcion = "En esta rama de la ingeniería se fusionan aspectos de electrónica, medicina, física, informática, química, biología y matemáticas. Las y los ingenieros biomédicos diseñan, crean, desarrollan, innovan e implementan equipos, dispositivos y sistemas médicos que ofrezcan soluciones tecnológicas y científicas en el área de la salud; así también manejan programas de mejoramiento, administración, operación y conservación de instalaciones y equipo hospitalario. En Politécnica de Chiapas formamos ingenieras (os) biomédicos profesionales y especializados, con valores, capaces de desarrollar, adoptar y aplicar la tecnología para ofrecer soluciones científicas y administrativas integrales en el campo de la salud en nuestro país.";
+
+          const mision = "<strong>  - Misión:</strong> Formar Ingenieros Biomédicos, que ofrezcan soluciones tecnológicas en el campo de la salud, en un ambiente seguro para el desarrollo científico sustentable.";
+
+          const vision = "<strong>  - Visión:</strong> Ser un programa académico, referente a nivel nacional e internacional en el desarrollo de tecnología para la salud, a través del establecimiento de acuerdos de colaboración y actividades académicas.";
+
+          const perfil = "<strong>  - Perfil:</strong> El aspirante deberá contar con las habilidades en las áreas de pensamiento matemático y analítico, estructura de la lengua y comprensión lectora; así también, deberá contar con las competencias básicas de matemáticas y física.";
+
+          const perfilEgreso = "<strong>  - Perfil de Egreso:</strong> El Ingeniero Biomédico se caracteriza por su formación multidisciplinaria, que le permite identificar, diagnosticar, reparar, diseñar, mejorar y proponer alternativas de solución a las necesidades y requerimientos en el área de instrumentación y apoyo tecnológico en el área médica, con criterio investigativo e innovador y principios éticos, filosóficos y humanísticos. Es un profesional capacitado para dirigir, intervenir y asesorar en el funcionamiento de centros hospitalarios. El ingeniero egresado contará con la experiencia necesaria para el uso de equipos biomédicos.";
+
+          const atributosEgreso = "<strong>  - Atributos de Egreso:</strong><br>\
+            - El egresado del Programa Académico de Ingeniería Biomédica es capaz de identificar, proponer, analizar y solucionar problemas del ámbito biomédico mediante el uso de los conocimientos adquiridos en ciencias básicas e ingeniería.<br>\
+            - El egresado del Programa Educativo de Ingeniería Biomédica es capaz de colaborar en equipos multidisciplinarios para establecer e innovar en soluciones biomédicas de impacto basadas en el pensamiento analítico empleando herramientas tecnológicas y computacionales pertinentes.<br>\
+            - El egresado del Programa Educativo de Ingeniería Biomédica está capacitado en el manejo de habilidades emocionales, cognitivas y comunicativas con diferentes audiencias del campo de la salud empleando los medios adecuados y a su alcance.<br>\
+            - El egresado del Programa Educativo de Ingeniería Biomédica es capaz de analizar, verificar, proponer y establecer los procesos de gestión que aseguren el uso correcto de las tecnologías médicas en el ámbito hospitalario apegado a la normatividad vigente de manera ética y profesional.<br>\
+            - El egresado del Programa Educativo de Ingeniería Biomédica es capaz de examinar, gestionar y aplicar las normas oficiales vigentes que se relacionan con el diseño, administración y operación de equipos e infraestructura relacionados con la Ingeniería Biomédica en el sector salud.<br>\
+            - El egresado del Programa Educativo de Ingeniería Biomédica es capaz de mantener una actualización y capacitación continua de sus conocimientos y habilidades en beneficio de su entorno laboral y profesional.<br>\
+            - El egresado del Programa Educativo de Ingeniería Biomédica cuenta con las bases que le permiten ejercer en la industria y en programas de posgrado a nivel nacional e internacional.";
+
+          const objetivosEducacionales = "<strong>  - Objetivos Educacionales:</strong><br>\
+            - El Ingeniero Biomédico demuestra una sólida competencia profesional en la planeación, evaluación, gestión del mantenimiento, capacitación y adquisición de tecnología médica en el sector salud público y privado.<br>\
+            - El Ingeniero Biomédico demuestra una sólida competencia laboral en el suministro, supervisión y consultoría de servicios especializados en tecnología médica al sector salud, empleando la normatividad vigente asegurando el uso óptimo y eficiente de su tecnología e infraestructura.<br>\
+            - El Ingeniero Biomédico desarrolla la capacidad para trabajar e interactuar en los diferentes niveles en proyectos de ingeniería, investigación y posgrado, logrando las metas propuestas que ayudan al desarrollo de su carrera profesional.<br>\
+            - El Ingeniero Biomédico desarrolla una sólida competencia profesional como especialista en diversas tecnologías médicas al capacitarse y actualizarse continuamente con principios éticos, asimilando los avances científicos y tecnológicos de su profesión para contribuir al desarrollo sustentable, cultural, económico y político en el ámbito nacional e internacional.<br>\
+            - El Ingeniero Biomédico tendrá la capacidad de desarrollar una visión emprendedora y de innovación para crear su propia empresa e impulsar nuevas líneas de negocio y/o productos dentro del sector salud.";
+
+          // Combina todos los fragmentos de texto en uno solo
+          const textoCompleto = `<div class="constante">${descripcion}</div><div class="constante">${mision}</div><div class="constante">${vision}</div><div class="constante">${perfil}</div><div class="constante">${perfilEgreso}</div><div class="constante">${atributosEgreso}</div><div class="constante">${objetivosEducacionales}</div>`;
+
+          return textoCompleto;
+      }
+
+      function mostrarDescripcion() {
+      const textoIngenieriaBiomedica = descripcionBM();
+      const descripcionContainer = document.getElementById("descripcionContainer");
+      descripcionContainer.innerHTML = textoIngenieriaBiomedica;
+      descripcionContainer.style.display = 'block'; // Mostrar el contenedor al hacer clic
+    }
+    </script>
+    
+    <!-- materias -->   
+    <div id="materiasContainer"></div>
+    <script>
+      function cargarMaterias() {
+        // Utiliza una solicitud AJAX para cargar el contenido de "materias.html"
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'botones/materias.html', true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            // El contenido se ha cargado exitosamente, muestra en el div
+            document.getElementById('materiasContainer').innerHTML = xhr.responseText;
+          }
+        };
+        xhr.send();
+      }
+    </script>
+
+
+    <!-- Docentes -->
+    <style>
+      /* Estilo de la tarjeta de docente */
+      .docente-card {
+        display: flex;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin: 10px;
+        width: 80%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 auto; /* Centra la tarjeta */
+      }
+  
+      /* Estilo de la imagen del docente */
+      .docente-img {
+      max-width: 200px; /* Ancho máximo de la imagen */
+      max-height: 500px; /* Altura máxima de la imagen */
+      height: 250px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+    }
+  
+      /* Estilo de la letra en la tarjeta */
+      .docente-info {
+        flex-grow: 1;
+        text-align: left;
+      }
+  
+      .docente-info h3, .docente-info p {
+        font-family: 'Arial', sans-serif;
+        color: #333;
+      }
+    </style>
+    <script>
+      function mostrarDocentes() {
+        // Obtener el contenedor donde se mostrarán los docentes
+        var docentesContainer = document.getElementById("docentes-container");
+  
+        // Limpiar el contenido anterior
+        docentesContainer.innerHTML = "";
+  
+        // Crear una lista de docentes
+        var docentes = [
+          {
+            nombre: "Nombre del Docente: ",
+            experiencia: "10 años",
+            idiomas: "Español, Inglés",
+            materias: "Matemáticas, Ciencias",
+            proyectos: "Proyecto A, Proyecto B",
+            imagen: "https://www.upchiapas.edu.mx/media/39/images/top.jpg"
+          },
+          {
+            nombre: "Nombre del Docente: ",
+            experiencia: "8 años",
+            idiomas: "Español, Francés",
+            materias: "Historia, Literatura",
+            proyectos: "Proyecto C, Proyecto D",
+            imagen: "imagen2.jpg"
+          },
+          {
+            nombre: "Nombre del Docente: ",
+            experiencia: "12 años",
+            idiomas: "Español, Alemán",
+            materias: "Física, Química",
+            proyectos: "Proyecto E, Proyecto F",
+            imagen: "imagen3.jpg"
+          }
+          // Puedes agregar más docentes según sea necesario
+        ];
+  
+        // Mostrar cada docente en una tarjeta
+        docentes.forEach(function(docente) {
+          var card = document.createElement("div");
+          card.className = "docente-card";
+  
+          var imagen = document.createElement("img");
+          imagen.src = docente.imagen;
+          imagen.alt = docente.nombre;
+          imagen.className = "docente-img";
+  
+          var infoContainer = document.createElement("div");
+          infoContainer.className = "docente-info";
+  
+          var nombre = document.createElement("h3");
+          nombre.textContent = docente.nombre;
+  
+          var experiencia = document.createElement("p");
+          experiencia.textContent = "Años de Experiencia: " + docente.experiencia;
+  
+          var idiomas = document.createElement("p");
+          idiomas.textContent = "Idiomas: " + docente.idiomas;
+  
+          var materias = document.createElement("p");
+          materias.textContent = "Materias: " + docente.materias;
+  
+          var proyectos = document.createElement("p");
+          proyectos.textContent = "Proyectos: " + docente.proyectos;
+  
+          // Agregar elementos a la tarjeta
+          infoContainer.appendChild(nombre);
+          infoContainer.appendChild(experiencia);
+          infoContainer.appendChild(idiomas);
+          infoContainer.appendChild(materias);
+          infoContainer.appendChild(proyectos);
+  
+          card.appendChild(imagen);
+          card.appendChild(infoContainer);
+  
+          // Agregar la tarjeta al contenedor
+          docentesContainer.appendChild(card);
+        });
+      }
+    </script>
+  <div id="docentes-container"></div>
+  
+    
+      
+    
+    
+    
+    <!-- visitas -->   
+    <div id="visitContainer"></div>
+    <script>
+      function visitas() {
+        // Crear un elemento iframe para incrustar el formulario
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLSe680b4ql_2S_cBQ9m-948mUJKP_3jkMrH-uW7sM9V1kMpwiA/viewform?embedded=true";
+        iframe.width = "100%";
+        iframe.height = "1000";
+        iframe.frameBorder = "0";
+        iframe.marginHeight = "0";
+        iframe.marginWidth = "0";
+
+        // Obtener el contenedor con la id "visitContainer"
+        const visitContainer = document.getElementById("visitContainer");
+
+        // Limpiar el contenido actual del contenedor
+        visitContainer.innerHTML = "";
+
+        // Agregar el iframe al contenedor
+        visitContainer.appendChild(iframe);
+      }
+      
+      function mostrarMaestro() {
+      var maestrosContainer = document.getElementById("maestrosContainer");
+      var maestroAleatorio = maestrosData[Math.floor(Math.random() * maestrosData.length)];
+
+      document.getElementById("maestro-foto").src = maestroAleatorio.foto;
+      document.getElementById("maestro-nombre").textContent = maestroAleatorio.nombre;
+      document.getElementById("maestro-materias").textContent = maestroAleatorio.materias;
+      document.getElementById("maestro-experiencia").textContent = maestroAleatorio.experiencia;
+      document.getElementById("maestro-proyectos").textContent = maestroAleatorio.proyectos;
+      document.getElementById("maestro-idiomas").textContent = maestroAleatorio.idiomas;
+
+      // Mostrar el contenedor
+      maestrosContainer.style.display = "block";
+    }
+
+    </script>
+
+    <!-- alumnos -->   
+    <div id="alumnosContainer">
+      <div id="carouselExample" class="carousel slide" style="display: none;"> <!-- Oculta el carrusel por defecto -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.upchiapas.edu.mx/images/slider/cover23b.jpg" class="d-block w-100" alt="1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.upchiapas.edu.mx/images/slider/vistete%20de%20rosa%20web.jpg" class="d-block w-100" alt="2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.upchiapas.edu.mx/images/slider/BANNETITULO.jpg" class="d-block w-100" alt="3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" ariahidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <script>
+      function student() {
+        const carousel = document.getElementById("carouselExample");
+        carousel.style.display = "block"; // Muestra el carrusel cuando se hace clic en el botón
+    
+        // Avanza automáticamente al siguiente slide cada  (x milisegundos)
+        const intervalId = setInterval(() => {
+          const nextButton = carousel.querySelector(".carousel-control-next");
+          nextButton.click();
+        }, 7500); //aqui cambia los segundos
+    
+        // Detiene la animación al pasar el mouse sobre el carrusel
+        carousel.addEventListener("mouseenter", () => {
+          clearInterval(intervalId);
+        });
+    
+        // Reanuda la animación cuando el mouse sale del carrusel
+        carousel.addEventListener("mouseleave", () => {
+          intervalId = setInterval(() => {
+            const nextButton = carousel.querySelector(".carousel-control-next");
+            nextButton.click();
+          }, 3000);
+        });
+      }
+    </script>
+
+    <!-- finish -->   
+    <footer class="container-fluid py-5 my-5 border-top">
+      <div class="row">
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+              <img class="img-fluid align-items-center" src="https://www.upchiapas.edu.mx/images/LOGOS EDUCACION 2022 PNG.png" style="width: 50%">
+          </div>
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+              <h7 align="center">Suchiapa<br>
+                  Carretera Tuxtla Gutierrez. - Portillo Zaragoza Km 21+500<br>
+                  Col. Las Brisas; Suchiapa, Chiapas. CP.29150. Teléfono: 01961 61 71460<br>
+                  Suchiapa, Chiapas.
+              </h7>
+          </div>
+          <div class="nav col-md-4 d-flex align-items-center justify-content-center">
+              <img class="img-fluid justify-content-end" src="https://platinum.upchiapas.edu.mx/pimgs/chiapas.png" style="width: 50%">
+          </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
